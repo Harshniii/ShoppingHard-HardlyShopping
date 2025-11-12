@@ -1,9 +1,9 @@
-##Overview
+## Overview
 
 This project focuses on analyzing clickstream data to reveal distinct consumer segments based on their online shopping behavior.
 Using clustering techniques, the system helps identify patterns in user interactions, providing valuable insights for targeted marketing strategies and personalization.
 
-##Key Features
+## Key Features
 
 Data Preprocessing – Cleans and prepares raw clickstream data.
 
