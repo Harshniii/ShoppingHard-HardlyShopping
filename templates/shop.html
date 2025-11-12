@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('static/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Top buttons */
+        .top-buttons {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        /* Products */
+        .product-card {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .product-card .card {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top buttons -->
+    <div class="top-buttons">
+        <a href="{{ url_for('cart') }}" class="btn btn-warning me-2">Go to Cart</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+    </div>
+
+    <div class="container">
+    <div class="row justify-content-center">
+        {% for product in products %}
+        <div class="col-md-4 product-card">
+            <div class="card h-100 text-center">
+                <img src="
+                {% if product.name == 'T-Shirt' %}https://img.icons8.com/color/96/000000/t-shirt.png
+                {% elif product.name == 'Jeans' %}https://img.icons8.com/color/96/000000/jeans.png
+                {% elif product.name == 'Sunglasses' %}https://img.icons8.com/color/96/000000/sunglasses.png
+                {% elif product.name == 'Men Jacket' %}https://img.icons8.com/color/96/000000/jacket.png
+                {% elif product.name == 'Smartphone' %}https://img.icons8.com/color/96/000000/smartphone.png
+                {% elif product.name == 'Headphones' %}https://img.icons8.com/color/96/000000/headphones.png
+                {% else %}https://img.icons8.com/color/96/000000/product.png{% endif %}
+                " alt="{{ product.name }}" class="card-img-top" style="height:200px; object-fit:contain; margin-top:15px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text"><strong>Price: ${{ product.price }}</strong></p>
+                    <a href="{{ url_for('product_detail', product_id=product.id) }}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+
+</body>
+</html>

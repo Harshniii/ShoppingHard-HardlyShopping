@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body style="margin:0; padding:0; font-family: Arial, sans-serif; 
+             background-image: url('static/bg.jpg'); background-size: cover; 
+             background-position: center; height: 100vh; display: flex; 
+             justify-content: center; align-items: center;">
+
+    <div style="background-color: rgba(255, 255, 255, 0.9); padding: 40px; 
+                border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+                width: 300px; text-align: center;">
+        <h2 style="margin-bottom: 30px; color: #333;">Register</h2>
+        <form method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+            <input type="text" name="name" placeholder="Name" required
+                   style="padding:10px; border-radius:5px; border:1px solid #ccc; font-size: 14px;">
+            <input type="email" name="email" placeholder="Email" required
+                   style="padding:10px; border-radius:5px; border:1px solid #ccc; font-size: 14px;">
+            <input type="password" name="password" placeholder="Password" required
+                   style="padding:10px; border-radius:5px; border:1px solid #ccc; font-size: 14px;">
+            <button type="submit" style="padding:10px; border:none; border-radius:5px; 
+                    background-color:#007bff; color:#fff; font-size:16px; cursor:pointer;">
+                Register
+            </button>
+        </form>
+        <p style="margin-top: 20px; font-size: 14px;">
+            <a href="{{ url_for('login') }}" style="text-decoration:none; color:#007bff;">
+                Already have an account? Login
+            </a>
+        </p>
+    </div>
+
+</body>
+</html>
